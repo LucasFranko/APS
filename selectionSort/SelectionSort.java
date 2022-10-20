@@ -1,3 +1,4 @@
+package selectionSort;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
@@ -9,7 +10,7 @@ public class SelectionSort {
         List<Integer> numeros = new ArrayList<>();
         int array[];
         try{
-            String this_path = System.getProperty("user.dir") + "/leitor/";
+            String this_path = System.getProperty("user.dir") + "/selectionSort/leitor/";
             
             Scanner leitor_arquivo = new Scanner(new FileReader(this_path + "10000_numbers.txt"));
             while(leitor_arquivo.hasNextLine()) {
