@@ -2,10 +2,11 @@ package selectionSort;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-public class SelectionSort {
+public class selectionSort {
     public static void main(String[] args) {
         List<Integer> numeros = new ArrayList<>();
         int array[];
@@ -18,7 +19,7 @@ public class SelectionSort {
                 numeros.add(Integer.valueOf(linha_arquivo));
             }
             array = numeros.stream().mapToInt(i -> i).toArray();
-            SelectionSort.printArray(array, 0, array.length);
+            selectionSort.printArray(array, 0, array.length);
         }catch(FileNotFoundException e){
             System.out.println("Exceção: " + e);
         }
@@ -56,20 +57,14 @@ public class SelectionSort {
             
             int Array[] = v;
 
-            SelectionSort s1 = new SelectionSort();
+            selectionSort s1 = new selectionSort();
             long startTime = System.nanoTime();
-            int sortedArray[] = s1.sorting(Array, Array.length);
+            s1.sorting(Array, Array.length);
             long endTime = System.nanoTime();
 
-            for (int i = 0; i < Array.length; i++) {
-                if(i != Array.length){
-                    // System.out.print(", ");
-                }
-                // System.out.print(sortedArray[i]);
-                System.out.println(sortedArray[i]);
-            }
+            System.out.println("Sorted Array:");
+            System.out.println(Arrays.toString(Array));
             double seconds = (endTime - startTime) * 1e-9;
-            // System.out.printf(".\nTempo de execução em segundos: %.9f segundos\n",seconds);
             System.out.printf("Tempo de execução em segundos: %.9f segundos\n",seconds);
 
         }
